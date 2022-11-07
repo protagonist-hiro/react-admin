@@ -35,7 +35,7 @@ function App() {
       <Admin
         dashboard={Dashboard}
         theme={theme}
-        dataProvider={simpleRestProvider("https://2069-202-63-244-120.in.ngrok.io")}
+        dataProvider={simpleRestProvider("http://65.2.184.188")}
         authProvider={authProvider}
         layout={CustomLayout}
       >
