@@ -1,0 +1,26 @@
+.edit_container {
+  margin-left: 8px;
+}
+/* .form_heading{
+    margin-top: 20px !important;
+    margin-left:0px ;
+    margin-bottom: 0px;
+    color: rgb(105, 97, 97);
+    font-weight: 500 !important;
+} */
+
+.offer_form_wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+}
+.textInput {
+  width: 100%;
+}
+
+.offer_form_wrapper > .ra-input {
+  justify-content: center;
+  display: flex;
+}

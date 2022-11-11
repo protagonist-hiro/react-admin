@@ -6,9 +6,11 @@ import {
   TextField,
   EditButton,
   TextInput,
+  ChipField
 } from "react-admin";
 
-import "../../list/list.css";
+import "../../../styles/list.css";
+
 
 const filters = [
   <TextInput
@@ -43,7 +45,7 @@ const Transactions = (props: any) => {
           <TextField source="saleAmount" />
           <TextField source="commission" />
           <DateField source="date" />
-          <TextField source="status" />
+          <ChipField source="status" />
           <EditButton />
         </Datagrid>
       </List>

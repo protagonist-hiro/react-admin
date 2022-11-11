@@ -1,0 +1,28 @@
+.create_category_container {
+    margin-left: 8px;
+  }
+  .textInput {
+    width: 100%;
+  }
+  .form_heading {
+    margin-top: 35px !important;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    color: rgb(105, 97, 97);
+    font-weight: 500 !important;
+  }
+  
+  .offer_form_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    gap:1em;
+    margin: auto;
+  }
+  
+  .offer_form_wrapper > .ra-input {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }

@@ -2,10 +2,10 @@ import "./dashboard.css";
 import CardComponent from "./card/Card";
 import { Grid, Typography } from "@material-ui/core";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import { Card, CardContent } from "@mui/material";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
+import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
 import {
   LineChart,
@@ -93,7 +93,7 @@ export const Dashboard = (props: any) => {
             label="Total links shared"
             data="800"
             background={"#E1A07A"}
-            icon={<TrendingUpIcon className="dashboard-item-icon" />}
+            icon={<ShareOutlinedIcon className="dashboard-item-icon" />}
           />
         </Grid>
 
@@ -102,7 +102,7 @@ export const Dashboard = (props: any) => {
             label="Transactions completed"
             data="700"
             background={"#82ca9d"}
-            icon={<TrendingDownIcon className="dashboard-item-icon" />}
+            icon={<ReceiptLongOutlinedIcon className="dashboard-item-icon" />}
           />
         </Grid>
       </Grid>
