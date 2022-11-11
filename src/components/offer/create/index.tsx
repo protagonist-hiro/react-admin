@@ -14,8 +14,8 @@ import {
 } from "react-admin";
 
 const choices: { id: string; name: string }[] = [
-  { id: "INR", name: "INR" },
-  { id: "cuelink", name: "Cuelink" },
+  { id: "inr", name: "inr" },
+  { id: "cuelinks", name: "cuelink" },
 ];
 
 export const CreateOffer = (props: any) => {
