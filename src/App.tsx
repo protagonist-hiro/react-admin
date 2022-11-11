@@ -38,11 +38,7 @@ function App() {
       <Admin
         dashboard={Dashboard}
         theme={theme}
-<<<<<<< HEAD
-        dataProvider={simpleRestProvider("http://65.2.184.188")}
-=======
         dataProvider={myDataProvider}
->>>>>>> upstream/main
         authProvider={authProvider}
         layout={CustomLayout}
       >
