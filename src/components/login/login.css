@@ -1,0 +1,48 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-details {
+  width: 100vh;
+  text-align: center;
+}
+
+.login-column-two {
+  background-color: #dfe9ec;
+}
+
+.login-component-width {
+  width: 100%;
+  text-align: left;
+}
+
+.login-header {
+  margin-bottom: 80px !important;
+  color: #312a91 !important;
+}
+
+.login-title {
+  margin-bottom: 10px !important;
+}
+
+.login-subtitle {
+  color: #8f8f89 !important;
+}
+
+.login-fields {
+  padding: 0 100px;
+}
+
+.login-submit-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #312a91 !important;
+  margin-top: 50px !important;
+  margin-bottom: 70px !important;
+  color: white !important;
+  font-size: 18px !important;
+  border-radius: 10px !important;
+}

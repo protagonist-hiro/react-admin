@@ -23,7 +23,7 @@ export const CreateSubCategory = (props: any) => {
       <Create title=" " redirect="list">
         <SimpleForm>
           <Box className="offer_form_wrapper">
-              <ReferenceInput
+            <ReferenceInput
               variant="outlined"
               source="categoryId"
               reference="categories"
@@ -42,17 +42,17 @@ export const CreateSubCategory = (props: any) => {
               style={{ width: "100%" }}
             />
           </Box>
-           <Box className="offer_form_wrapper">
-           <TextInput
+          <Box className="offer_form_wrapper">
+            <TextInput
               variant="outlined"
               validate={required()}
               source="name"
               label="Sub Category Name"
               style={{ width: "100%" }}
             />
-          <BooleanInput source="isActive" />
-           </Box>
-          
+            <BooleanInput source="isActive" />
+          </Box>
+
           <TextInput
             multiline
             variant="outlined"
@@ -61,16 +61,16 @@ export const CreateSubCategory = (props: any) => {
             style={{ width: "100%" }}
           />
           <Box className="offer_form_wrapper">
-           <ImageInput className="textInput" source="image" label="Image">
-                <ImageField source="src" title="title" />
-            </ImageInput> 
-           
-            <div className="textInput"></div>
-          </Box>
+            <ImageInput className="textInput" source="image" label="Image">
+              <ImageField source="src" title="title" />
+            </ImageInput>
 
+            <ImageInput className="textInput" source="icon" label="Icon">
+              <ImageField source="src" title="title" />
+            </ImageInput>
+          </Box>
         </SimpleForm>
       </Create>
     </div>
   );
 };
-

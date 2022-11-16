@@ -37,8 +37,10 @@ export const EditCategory = (props: any) => {
               <ImageField source="imageUrl" title="title" />
             </ImageInput>
             
+            
             <div className="textInput"></div>
           </Box>
+        
         </SimpleForm>
       </Edit>
     </div>

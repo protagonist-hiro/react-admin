@@ -18,3 +18,37 @@
 .user_detail_data_container {
   padding: 10px;
 }
+
+.user_detail_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_detail_withdraw_btn {
+  height: 35px !important;
+  width: 100px !important;
+  border-radius: 5px !important;
+  border: 0px !important;
+  color: white;
+  background-color: #312a91 !important;
+  margin-top: 35px !important;
+  cursor: pointer;
+}
+
+.user_detail_card_title {
+  color: #8a8a8a !important;
+  margin: 10px 0 10px 10px !important;
+}
+
+.user_detail_basic_info {
+  margin-bottom: 10px;
+}
+
+.user_detail_ledger_info {
+  border-top: 1px solid #e5e4e2;
+}
+
+.user_detail_ledger_title {
+  margin-top: 30px !important;
+}

@@ -12,8 +12,6 @@ import {
 } from "react-admin";
 import "../../../styles/edit.css";
 
-
-
 export const EditSubCategory = (props: any) => {
   return (
     <div className="edit_container">
@@ -22,9 +20,9 @@ export const EditSubCategory = (props: any) => {
       </Typography>
 
       <Edit title=" " {...props}>
-      <SimpleForm>
+        <SimpleForm>
           <Box className="offer_form_wrapper">
-              <ReferenceInput
+            <ReferenceInput
               variant="outlined"
               source="categoryId"
               reference="categories"
@@ -51,8 +49,7 @@ export const EditSubCategory = (props: any) => {
               label="Sub Category Name"
               style={{ width: "100%" }}
             />
-          <BooleanInput source="isActive" />
-            
+            <BooleanInput source="isActive" />
           </Box>
           <TextInput
             multiline
@@ -62,16 +59,15 @@ export const EditSubCategory = (props: any) => {
             style={{ width: "100%" }}
           />
           <Box className="offer_form_wrapper">
-           <ImageInput className="textInput" source="image" label="Image">
-                <ImageField source="imageUrl" title="title" />
-            </ImageInput> 
-           
-            <div className="textInput"></div>
+            <ImageInput className="textInput" source="image" label="Image">
+              <ImageField source="imageUrl" title="title" />
+            </ImageInput>
+            <ImageInput className="textInput" source="icon" label="Icon">
+              <ImageField source="icon" title="title" />
+            </ImageInput>
           </Box>
-
         </SimpleForm>
       </Edit>
     </div>
   );
 };
-

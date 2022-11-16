@@ -1,5 +1,5 @@
 import React from "react";
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, CustomRoutes } from "react-admin";
 import { Categories } from "./components/categories/list";
 import { SubCategories } from "./components/subCategories/list";
 import { Offers } from "./components/offer/list";
@@ -20,9 +20,9 @@ import CustomLayout from "./layout/customLayout";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 // import {Route} from "react-router-dom"
 import ClassOutlinedIcon from "@mui/icons-material/ClassOutlined";
-import authProvider from  "./utils/authProvider";
+import authProvider from "./utils/authProvider";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Transactions from "./components/transactions/list";
 import Users from "./components/users/list";
 import { CreateUser } from "./components/users/create";
@@ -30,7 +30,8 @@ import { EditUser } from "./components/users/edit/EditUser";
 import { myDataProvider } from "./utils/data-provider";
 import { DetailUser } from "./components/users/detail";
 
-// import LoginPage from './components/login/login';
+import LoginPage from "./components/login/login";
+import RewardPoint from "./components/rewardPoint";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         dataProvider={myDataProvider}
         authProvider={authProvider}
         layout={CustomLayout}
+        loginPage={LoginPage}
       >
         <Resource
           name="categories"
@@ -85,6 +87,9 @@ function App() {
           icon={ReceiptOutlinedIcon}
           options={{ label: "Transactions" }}
         />
+        <CustomRoutes noLayout>
+          <Route path="/reward-point" element={<RewardPoint />} />
+        </CustomRoutes>
       </Admin>
     </BrowserRouter>
   );

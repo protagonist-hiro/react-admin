@@ -6,11 +6,11 @@ import {
   TextField,
   EditButton,
   TextInput,
-  ChipField
+  ChipField,
+  DateInput,
 } from "react-admin";
 
 import "../../../styles/list.css";
-
 
 const filters = [
   <TextInput
@@ -20,6 +20,8 @@ const filters = [
     label="Search"
     alwaysOn
   />,
+  <DateInput source="from_date" />,
+  <DateInput source="to_date" />,
 ];
 
 const Transactions = (props: any) => {

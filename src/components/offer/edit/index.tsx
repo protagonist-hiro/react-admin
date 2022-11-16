@@ -14,8 +14,8 @@ import "../../../styles/edit.css";
 
 
 const choices: { id: string; name: string }[] = [
-  { id: "INR", name: "INR" },
-  { id: "cuelink", name: "Cuelink" },
+  { id: "inr", name: "inr" },
+  { id: "cuelinks", name: "cuelinks" },
 ];
 
 
@@ -94,8 +94,13 @@ export const EditOffer = (props: any) => {
         
           <Box className="offer_form_wrapper">
             <ImageInput className="textInput" source="image" label="Image">
-              <ImageField source="imageUrl" title="title" />
+              <>
+              <ImageField source="src" title="title" />
+            <ImageField source="imageUrl" />
+              </>
+            {/* <img src="imageUrl" alt="" /> */}
             </ImageInput>
+
             <div className="textInput"></div>
           </Box>
             <BooleanInput source="isActive" />

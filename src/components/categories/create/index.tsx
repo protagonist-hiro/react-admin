@@ -43,9 +43,11 @@ export const CreateCategory = (props: any) => {
             <ImageInput className="textInput" source="image" label="Image">
               <ImageField source="src" title="title" />
             </ImageInput>
+           
              
             <div className="textInput"></div>
           </Box>
+         
           <BooleanInput defaultChecked source="isActive" />
         </SimpleForm>
       </Create>

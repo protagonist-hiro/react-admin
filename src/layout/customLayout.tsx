@@ -4,6 +4,6 @@ import {CustomAppBar} from "./customAppbar";
 // import {MyMenu} from "./MyMenu";
 
 const CustomLayout = (props:any) => {
-  return <Layout {...props} appBar={CustomAppBar}  />;
+  return <Layout {...props} appBar={CustomAppBar} />;
 };
 export default CustomLayout;

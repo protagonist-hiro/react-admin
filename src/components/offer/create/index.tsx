@@ -15,7 +15,7 @@ import {
 
 const choices: { id: string; name: string }[] = [
   { id: "inr", name: "inr" },
-  { id: "cuelinks", name: "cuelink" },
+  { id: "cuelinks", name: "cuelinks" },
 ];
 
 export const CreateOffer = (props: any) => {
