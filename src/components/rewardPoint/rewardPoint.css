@@ -1,0 +1,76 @@
+.rewardPoint-container {
+  background-color: #f6f6f6;
+  padding: 10px;
+  height: 100vh;
+}
+
+.rewardPoint-card-offer {
+  background-color: #87d06e !important;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.rewardPoint-header {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6ff75;
+  border-radius: 5px;
+}
+.rewardPoint-header-text {
+  font-size: 14px !important;
+}
+
+.rewardPoint-header-dot {
+  background-color: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.rewardPoint-contents-description {
+  color: white !important;
+  font-size: 14px !important;
+  margin-bottom: 10px;
+}
+
+.rewardPoint-contents-title {
+  color: #f6ff75 !important;
+}
+
+.rewardPoint-contents-image {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.rewardPoint-card-other-info {
+  margin-bottom: 20px;
+}
+
+.rewardPoint-card-other-info-data {
+  padding: 20px;
+  border-bottom: 2px solid #f6f6f6;
+}
+
+.rewardPoint-card-other-info-datas {
+  padding: 20px;
+}
+
+.rewardPoint-card-other-info-title {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: #8a8a8a !important;
+  letter-spacing: 2px !important;
+}
+
+.rewardPoint-card-other-info-points-number {
+  color: red;
+  font-weight: 600;
+}
+
+.rewardPoint-card-other-info-points {
+  color: #3d3d3d;
+  font-weight: 600;
+}
