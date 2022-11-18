@@ -1,8 +1,19 @@
+// @ts-nocheck
 import { Card, Grid, Typography } from "@material-ui/core";
+import { useGetList } from "react-admin";
+import CircularProgress from "@mui/material/CircularProgress";
 import "./rewardPoint.css";
+import moment from "moment";
 
 const RewardPoint = () => {
-  return (
+  const { data, isLoading } = useGetList("transactions", {
+    pagination: { page: 1, perPage: 10 },
+  });
+  return isLoading ? (
+    <div className="rewardPoint-loading">
+      <CircularProgress />
+    </div>
+  ) : (
     <div className="rewardPoint-container">
       <Typography className="rewardPoint-title">Rewards</Typography>
       <Card className="rewardPoint-card">
@@ -33,32 +44,47 @@ const RewardPoint = () => {
             View All
           </Typography>
         </div>
-        <div className="rewardPoint-transaction-data">
-          <Typography className="rewardPoint-transaction-date">
-            Thu, 17 Nov
-          </Typography>
+        {data
+          ? data.map((transaction) => {
+              return (
+                <div
+                  className="rewardPoint-transaction-data"
+                  key={transaction.id}
+                >
+                  <Typography className="rewardPoint-transaction-date">
+                    {moment(transaction.date).format("ll")}
+                  </Typography>
 
-          <div className="rewardPoint-transaction-data-container">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/TAXI.jpg/220px-TAXI.jpg"
-              alt="img"
-              width={"40px"}
-            />
-            <div className="rewardPoint-transaction-data-values">
-              <div className="rewardPoint-transaction-data-values-points">
-                <Typography className="rewardPoint-transaction-data-values-points-title">
-                  Ola taxi booking
-                </Typography>
-                <Typography className="rewardPoint-transaction-data-values-points-points">
-                  10 Points
-                </Typography>
-              </div>
-              <Typography className="rewardPoint-transaction-data-values-status">
-                Approved
-              </Typography>
-            </div>
-          </div>
-        </div>
+                  <div className="rewardPoint-transaction-data-container">
+                    <div className="rewardPoint-transaction-data-values">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApO3VfldRAzRsjAznNyRT2Qvq_f8OGF8V4c3v_C8&s"
+                        alt="img"
+                        width={"50px"}
+                      />
+                      <div className="rewardPoint-transaction-data-values-points">
+                        <Typography className="rewardPoint-transaction-data-values-points-title">
+                          {transaction.name ? transaction.name : "xxxxxx"}
+                        </Typography>
+                        <Typography className="rewardPoint-transaction-data-values-points-value">
+                          {transaction.commission} Points
+                        </Typography>
+                      </div>
+                    </div>
+                    <Typography
+                      className={
+                        transaction.status === "pending"
+                          ? "rewardPoint-transaction-data-values-status-pending"
+                          : "rewardPoint-transaction-data-values-status-approved"
+                      }
+                    >
+                      {transaction.status}
+                    </Typography>
+                  </div>
+                </div>
+              );
+            })
+          : "No transaction available"}
       </div>
     </div>
   );
