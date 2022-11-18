@@ -36,7 +36,8 @@ const httpClient = (url, options) => {
   // if (!options.headers) {
   //     options.headers = new Headers({ Accept: 'application/json' });
   // }
-  const { accessToken } = JSON.parse(localStorage.getItem("user"));
+  try{
+    const { accessToken } = JSON.parse(localStorage.getItem("user"));
   if (accessToken) {
     if (typeof options == "undefined") {
       options = {
@@ -53,6 +54,10 @@ const httpClient = (url, options) => {
     }
   }
   return fetchUtils.fetchJson(url, options);
+  }
+  catch(e){
+    return fetchUtils.fetchJson(url, options);
+  }
 };
 
 export const dataProvider = simpleRestProvider(servicesHost, httpClient);
