@@ -44,7 +44,7 @@ const RewardPoint = () => {
             View All
           </Typography>
         </div>
-        {!data ? (
+        {data ? (
           data.map((transaction) => {
             return (
               <div
