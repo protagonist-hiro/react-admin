@@ -164,3 +164,14 @@
 .rewardPoint-transaction-data-values-status-approved {
   color: #4fcc5c !important;
 }
+
+.rewardPoint-not-available {
+  font-family: "Open Sans", serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 19px !important;
+  letter-spacing: 1px !important;
+  color: #f2b631 !important;
+  margin-top: 10px !important;
+}

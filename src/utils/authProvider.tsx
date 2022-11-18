@@ -19,8 +19,6 @@ const authProvider = {
     };
     return axios(request)
       .then((response) => {
-        // console.log("response --> " , response)
-
         if (response?.data?.tokens) {
           const refreshToken = response?.data?.tokens?.refreshToken;
 
@@ -36,8 +34,6 @@ const authProvider = {
             email,
             permission: decodedToken.roles,
           };
-
-          // console.log("decode access token " , decodedToken)
 
           localStorage.setItem("user", JSON.stringify(user));
 
@@ -79,7 +75,6 @@ const authProvider = {
   },
   getIdentity: () => {
     const user: any = JSON.parse(localStorage.getItem("user"));
-    // console.log("user",user)
 
     return Promise.resolve({
       id: user.userId,

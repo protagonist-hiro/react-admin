@@ -1,0 +1,22 @@
+.transaction-header {
+  margin-bottom: 20px !important;
+}
+
+.transaction-refresh-btn {
+  height: 35px !important;
+  width: 100px !important;
+  border-radius: 5px !important;
+  border: 0px !important;
+  color: white;
+  background-color: #312a91 !important;
+  cursor: pointer;
+}
+
+.transaction-filter-btn {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-filter-option {
+  width: 120px;
+}

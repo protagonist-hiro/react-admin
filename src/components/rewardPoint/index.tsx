@@ -22,13 +22,13 @@ const RewardPoint = () => {
             <Typography className="rewardPoint-card-label">
               Existing Balance
             </Typography>
-            <Typography className="rewardPoint-card-value">700</Typography>
+            <Typography className="rewardPoint-card-value">300</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography className="rewardPoint-card-label">
               Total reward points
             </Typography>
-            <Typography className="rewardPoint-card-value">250</Typography>
+            <Typography className="rewardPoint-card-value">550</Typography>
           </Grid>
         </Grid>
       </Card>
@@ -38,53 +38,57 @@ const RewardPoint = () => {
         </Typography>
         <div className="rewardPoint-transaction-description">
           <Typography className="rewardPoint-transaction-desc">
-            Last ten transactions
+            Last 10 transactions
           </Typography>
           <Typography className="rewardPoint-transaction-view-btn">
             View All
           </Typography>
         </div>
-        {data
-          ? data.map((transaction) => {
-              return (
-                <div
-                  className="rewardPoint-transaction-data"
-                  key={transaction.id}
-                >
-                  <Typography className="rewardPoint-transaction-date">
-                    {moment(transaction.date).format("ll")}
-                  </Typography>
+        {!data ? (
+          data.map((transaction) => {
+            return (
+              <div
+                className="rewardPoint-transaction-data"
+                key={transaction.id}
+              >
+                <Typography className="rewardPoint-transaction-date">
+                  {moment(transaction.date).format("ll")}
+                </Typography>
 
-                  <div className="rewardPoint-transaction-data-container">
-                    <div className="rewardPoint-transaction-data-values">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApO3VfldRAzRsjAznNyRT2Qvq_f8OGF8V4c3v_C8&s"
-                        alt="img"
-                        width={"50px"}
-                      />
-                      <div className="rewardPoint-transaction-data-values-points">
-                        <Typography className="rewardPoint-transaction-data-values-points-title">
-                          {transaction.name ? transaction.name : "xxxxxx"}
-                        </Typography>
-                        <Typography className="rewardPoint-transaction-data-values-points-value">
-                          {transaction.commission} Points
-                        </Typography>
-                      </div>
+                <div className="rewardPoint-transaction-data-container">
+                  <div className="rewardPoint-transaction-data-values">
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApO3VfldRAzRsjAznNyRT2Qvq_f8OGF8V4c3v_C8&s"
+                      alt="img"
+                      width={"50px"}
+                    />
+                    <div className="rewardPoint-transaction-data-values-points">
+                      <Typography className="rewardPoint-transaction-data-values-points-title">
+                        {transaction.name ? transaction.name : "xxxxxx"}
+                      </Typography>
+                      <Typography className="rewardPoint-transaction-data-values-points-value">
+                        {transaction.commission} Points
+                      </Typography>
                     </div>
-                    <Typography
-                      className={
-                        transaction.status === "pending"
-                          ? "rewardPoint-transaction-data-values-status-pending"
-                          : "rewardPoint-transaction-data-values-status-approved"
-                      }
-                    >
-                      {transaction.status}
-                    </Typography>
                   </div>
+                  <Typography
+                    className={
+                      transaction.status === "pending"
+                        ? "rewardPoint-transaction-data-values-status-pending"
+                        : "rewardPoint-transaction-data-values-status-approved"
+                    }
+                  >
+                    {transaction.status}
+                  </Typography>
                 </div>
-              );
-            })
-          : "No transaction available"}
+              </div>
+            );
+          })
+        ) : (
+          <div className="rewardPoint-not-available">
+            Transaction not available
+          </div>
+        )}
       </div>
     </div>
   );
