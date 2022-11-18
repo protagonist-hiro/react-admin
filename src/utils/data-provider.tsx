@@ -36,25 +36,6 @@ const httpClient = (url, options) => {
   // if (!options.headers) {
   //     options.headers = new Headers({ Accept: 'application/json' });
   // }
-<<<<<<< HEAD
-  const {accessToken} = JSON.parse(localStorage.getItem('user'));
-  console.log(accessToken,JSON.parse(localStorage.getItem('user')))
-  if(accessToken){
-    if(typeof(options)=='undefined' ){
-      options = {headers : new Headers({'Authorization': `Bearer ${accessToken}`})} 
-    }
-    else{
-      if(typeof(options.headers)=='undefined'){
-        console.log(options)
-        options.headers = new Headers({'Authorization': `Bearer ${accessToken}`}) 
-      }
-      else{
-        options.headers.set('Authorization', `Bearer ${accessToken}`);
-      }
-    }
-  }
-  console.log(options)
-=======
   const { accessToken } = JSON.parse(localStorage.getItem("user"));
   if (accessToken) {
     if (typeof options == "undefined") {
@@ -71,7 +52,6 @@ const httpClient = (url, options) => {
       }
     }
   }
->>>>>>> 86e0ab9496678dabf8e71e18247cd05057cdd0cc
   return fetchUtils.fetchJson(url, options);
 };
 
