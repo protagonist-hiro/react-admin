@@ -28,8 +28,9 @@ const authProvider = {
           const email = response?.data?.name ? response?.data?.name : "user";
 
           const decodedToken = decodeJwt(response?.data?.tokens?.refreshToken);
-
+          const accessToken = response?.data?.tokens?.accessToken;
           const user = {
+            accessToken,
             refreshToken,
             userId,
             email,

@@ -2,8 +2,9 @@
 import simpleRestProvider from "ra-data-simple-rest";
 import { fetchUtils } from "react-admin";
 
-export const servicesHost = "https://rayyapi.tk";
-// export const servicesHost = "https://28f2-202-63-244-120.in.ngrok.io";
+// export const servicesHost = "https://rayyapi.tk";
+// export const servicesHost = "http://localhost:3001";
+export const servicesHost = "https://2c8e-110-44-120-57.in.ngrok.io";
 
 const objectToFormData = (obj, form, namespace) => {
   const fd = form || new FormData();
@@ -35,8 +36,23 @@ const httpClient = (url, options) => {
   // if (!options.headers) {
   //     options.headers = new Headers({ Accept: 'application/json' });
   // }
-  // const token = localStorage.getItem('token');
-  // options.headers.set('Authorization', `Bearer ${token}`);
+  const {accessToken} = JSON.parse(localStorage.getItem('user'));
+  console.log(accessToken,JSON.parse(localStorage.getItem('user')))
+  if(accessToken){
+    if(typeof(options)=='undefined' ){
+      options = {headers : new Headers({'Authorization': `Bearer ${accessToken}`})} 
+    }
+    else{
+      if(typeof(options.headers)=='undefined'){
+        console.log(options)
+        options.headers = new Headers({'Authorization': `Bearer ${accessToken}`}) 
+      }
+      else{
+        options.headers.set('Authorization', `Bearer ${accessToken}`);
+      }
+    }
+  }
+  console.log(options)
   return fetchUtils.fetchJson(url, options);
 };
 
