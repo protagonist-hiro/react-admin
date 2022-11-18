@@ -1,5 +1,5 @@
 import { Typography } from "@material-ui/core";
-import { List, Datagrid, TextField, EditButton, TextInput } from "react-admin";
+import { List, Datagrid, TextField, EditButton, TextInput, AutocompleteInput  } from "react-admin";
 
 import "../ledger.css";
 
@@ -8,9 +8,20 @@ const filters = [
     className="search_form"
     source="q"
     variant="outlined"
-    label="Search"
+    label="Search By User Name"
     alwaysOn
   />,
+  <AutocompleteInput
+  source="network"
+  variant="outlined"
+  className="network-search-form"
+  label="Search By Network"
+  alwaysOn
+  choices={[
+    {id:'inr',name:"inr"},
+    {id:'cuelink',name:"cuelink"}
+  ]}
+  />
 ];
 
 const Ledger = (props: any) => {
@@ -30,6 +41,7 @@ const Ledger = (props: any) => {
             </Typography>
           }
         >
+          <TextField label="User Name" source="user.name" />
           <TextField source="transactionType" />
           <TextField source="rewardPoint" />
           <TextField source="network" />
